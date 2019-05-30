@@ -235,10 +235,8 @@ def gen_synthesis_data_v1(dest_path, iteration = 1):
     bg_images_path1 = 'raw_data/255x340_ocr_train_image_background'
     bg_images_path2 = 'raw_data/255x340_other_bgs'
 
-    # images_path = 'raw_data/ocr_image'
-    # annot_path = 'raw_data/ocr_annot'
-    images_path = 'raw_data/255x340_myself_image'
-    annot_path = 'raw_data/255x340_myself_annot'
+    images_path = 'raw_data/ocr_image'
+    annot_path = 'raw_data/ocr_annot'
 
     if not os.path.exists(images_path):
         raise ValueError("directory {} not exists".format(annot_path))

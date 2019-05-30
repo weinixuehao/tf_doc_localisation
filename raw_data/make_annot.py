@@ -37,8 +37,8 @@ def click_and_crop(event, x, y, flags, param):
             cv2.line(image, refPt[2], refPt[3], (22,22,22), 1)
 
 
-images_dir = 'raw_data/255x340_myself_image'
-annots_dir = 'raw_data/255x340_myself_annot'
+images_dir = 'raw_data/self_imgs'
+annots_dir = 'raw_data/self_annot'
 all_images = sorted(glob(os.path.join(images_dir, '*.jpg')))
 
 # image = cv2.imread(args['image'])
