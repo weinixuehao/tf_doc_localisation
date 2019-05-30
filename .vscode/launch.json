@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "make_annot.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/raw_data/make_annot.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "caculate_xy_coordinate.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/caculate_xy_coordinate.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "frozen_model.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/frozen_model.py",
+            "console": "integratedTerminal",
+            "args": [
+                     "--input_graph", "data/train_dir/graph.pbtxt", 
+                     "--input_checkpoint", "data/train_dir/model.ckpt-36183",
+                     "--output_graph", "255X340_frozen_model.pb",
+                     "--output_node_names", "keypoints_pred"
+                    ]
+        },
+        {
+            "name": "optimize_for_inference.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/optimize_for_inference.py",
+            "console": "integratedTerminal",
+            "args": [
+                     "--input", "255X340_frozen_model.pb", 
+                     "--output", "255X340_inference.pb",
+                     "--frozen_graph", "True", 
+                     "--input_names", "IteratorGetNext",
+                     "--output_names", "keypoints_pred"
+                    ]
+        },
+        {
+            "name": "resize.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/raw_data/resize.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "synthesis_data.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/synthesis_data.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "receipt_dataset.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/receipt_dataset.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "test.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "train.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "test_tflite_model.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_tflite_model.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "export_tflite_model.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/export_tflite_model.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}

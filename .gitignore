@@ -2,8 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.vscode
-.vscode/*
 
 nohup.out
 # For mac
@@ -14,3 +12,4 @@ data/*
 Demo/Pods/*
 Demo/Demo.xcodeproj/xcuserdata/
 Demo/Demo.xcworkspace/xcuserdata/
+.vscode/settings.json
