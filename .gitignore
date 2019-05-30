@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode
+.vscode/*
+
+nohup.out
+# For mac
+.DS_Store
+data/*
+
+# iOS App
+Demo/Pods/*
+Demo/Demo.xcodeproj/xcuserdata/
+Demo/Demo.xcworkspace/xcuserdata/
