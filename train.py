@@ -76,8 +76,8 @@ if __name__ == "__main__":
     train_dir = FLAGS.train_logdir
 
     params = {
-        "width" : 255,
-        "height" : 340,
+        "width" : 224,
+        "height" : 224,
         "depth_multiplier" : .5,
         "train_dir" : train_dir,
         "learning_rate" : FLAGS.base_learning_rate,

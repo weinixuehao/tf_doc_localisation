@@ -2,12 +2,12 @@ import tensorflow as tf
 import numpy as np 
 
 outputNodeNames = ["heats_map_regression/pred_keypoints/BiasAdd"]
-input_checkpoint = "data/train_dir/model.ckpt-36183"
-graph_def_file = "255X340_frozen_model.pb"
+input_checkpoint = "data/train_dir/model.ckpt-17440"
+graph_def_file = "224X224_frozen_model.pb"
 input_name = "input"
 
 with tf.Session(graph=tf.Graph()) as sess:
-    inputImg = tf.placeholder(dtype=tf.float32, shape=(1, 340, 255, 3), name=input_name)
+    inputImg = tf.placeholder(dtype=tf.float32, shape=(1, 224, 224, 3), name=input_name)
     saver = tf.train.import_meta_graph(input_checkpoint + '.meta', input_map={'IteratorGetNext:0':  inputImg}, clear_devices=True)
     saver.restore(sess, input_checkpoint)
     graph = tf.get_default_graph() # 获得默认的图

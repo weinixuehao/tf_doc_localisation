@@ -5,7 +5,7 @@ import numpy as np
 from glob import glob
 from PIL import Image, ImageDraw, ImageFilter
 
-image_width, image_height = 255, 340
+image_width, image_height = 224, 224
 
 def shift_image(image_nd, dx, dy):
     image_nd = np.roll(image_nd, dy, axis=0)
@@ -232,11 +232,11 @@ def gen_synthesis_data_v1(dest_path, iteration = 1):
     """
     # bg_images_path1 = 'raw_data/ocr_train_image_background'
     # bg_images_path2 = 'raw_data/other_bgs'
-    bg_images_path1 = 'raw_data/255x340_ocr_train_image_background'
-    bg_images_path2 = 'raw_data/255x340_other_bgs'
+    bg_images_path1 = 'raw_data/ocr_train_image_background_224x224'
+    bg_images_path2 = 'raw_data/other_bgs224x224'
 
-    images_path = 'raw_data/ocr_image'
-    annot_path = 'raw_data/ocr_annot'
+    images_path = 'raw_data/ocr_image_224x224'
+    annot_path = 'raw_data/ocr_annot_224x224'
 
     if not os.path.exists(images_path):
         raise ValueError("directory {} not exists".format(annot_path))
@@ -293,9 +293,9 @@ def gen_synthesis_data_v2(dest_path, iteration = 1):
     # bg_images_path1 = 'raw_data/ocr_train_image_background'
     # bg_images_path2 = 'raw_data/other_bgs'
     # rec_images_path = 'raw_data/rec_imgs'
-    bg_images_path1 = 'raw_data/255x340_ocr_train_image_background'
-    bg_images_path2 = 'raw_data/255x340_other_bgs'
-    rec_images_path = 'raw_data/255x340_rec_imgs'
+    bg_images_path1 = 'raw_data/ocr_train_image_background_224x224'
+    bg_images_path2 = 'raw_data/other_bgs224x224'
+    rec_images_path = 'raw_data/rec_imgs_224x224'
 
     if not os.path.exists(rec_images_path):
         raise ValueError("directory {} not exists".format(rec_images_path))
@@ -339,5 +339,5 @@ def gen_synthesis_data_v2(dest_path, iteration = 1):
     sys.stdout.flush()
 
 if __name__ == '__main__':
-    gen_synthesis_data_v1('data/receipts', iteration=1)
-    # gen_synthesis_data_v2('data/receipts', iteration=1)    
+    # gen_synthesis_data_v1('data/receipts', iteration=1)
+    gen_synthesis_data_v2('data/receipts', iteration=1)    
