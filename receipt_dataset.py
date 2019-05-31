@@ -15,7 +15,7 @@ _NUM_SHARDS = 4
 
 receipt_dir = "data/receipts"
 
-midv_dir = "raw_data/255x340_midv_500"
+midv_dir = "/Users/wt_02/Downloads/midv_500_224x224"
 tfrecord_output_dir = "data/tfrecord"
 
 receipt_eval_samples = ['receipt_459', 'receipt_485', 'receipt_374', 'receipt_400', 'receipt_395', 'receipt_540', 'receipt_558']
