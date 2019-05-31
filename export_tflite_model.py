@@ -30,4 +30,4 @@ with tf.Session(graph=tf.Graph()) as sess:
     converter = tf.contrib.lite.TocoConverter.from_frozen_graph(
     graph_def_file, input_arrays, outputNodeNames)
     tflite_model = converter.convert()
-    open("frozen_model33.tflite", "wb").write(tflite_model)
+    open("224X224_frozen_model.tflite", "wb").write(tflite_model)
