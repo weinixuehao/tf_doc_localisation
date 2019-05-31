@@ -28,3 +28,4 @@ android/.DS_Store
 android/build
 android/captures
 android/.externalNativeBuild
+android/sdk/build/
