@@ -11,9 +11,9 @@ from model.dsnt import dsnt
 from PIL import Image, ImageDraw
 
 
-width = 255
-height = 340
-output_dir = "output_255*340/"
+width = 224
+height = 224
+output_dir = "output/"
 
 def _load_graph(frozen_graph_filename):
     """
@@ -27,8 +27,8 @@ def _load_graph(frozen_graph_filename):
     
 if __name__ == "__main__":
 
-    all_imgs = glob("test_samples_255x340/*.jpg")
-    freeze_file_name = "255X340_frozen_model.pb"
+    all_imgs = glob("test_samples_600x800/*.jpg")
+    freeze_file_name = "224X224_frozen_model.pb"
     
     graph = _load_graph(freeze_file_name)
     sess = tf.Session(graph=graph)
