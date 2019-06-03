@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np 
 
 outputNodeNames = ["heats_map_regression/pred_keypoints/BiasAdd"]
-input_checkpoint = "data/train_dir/model.ckpt-17440"
+input_checkpoint = "data/train_dir/model.ckpt-33318"
 graph_def_file = "224X224_frozen_model.pb"
 input_name = "input"
 
